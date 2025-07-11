@@ -16,4 +16,4 @@ def test_multiply_identity():
 
 
 def test_multiply_zero():
-    assert 0 * 100 == 100
+    assert 0 * 100 == 0
