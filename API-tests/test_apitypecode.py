@@ -66,6 +66,28 @@ def test_create_post():
     assert data["id"] == 101
 
 
+def test_deleting_post():
+    response = requests.delete(url)
+    assert response.status_code == 200
+
+
+def test_multiple_deleting_post():
+    response = requests.delete(url)
+    assert response.status_code in [200, 204]
+
+
+def test_patch():
+    payload = {
+        "title": "Nowy tytul",
+        "test": "teest"
+    }
+    response = requests.patch(url, json=payload)
+    assert response.status_code == 200
+
+    data = response.json()
+    assert data["title"] == payload["title"]
+    assert data["test"] == payload["test"]
+
 
 
 
