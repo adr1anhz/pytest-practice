@@ -1,10 +1,15 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import pytest
-
 from stuff.accum import Accumulator
 
+@pytest.fixture
+def accum():
+    return Accumulator()
 
-def test_accumulator_init():
-    accum = Accumulator()
+
+def test_accumulator_init(accum, accum2):
     assert accum.count == 0
 
 def test_accumulator_add_one():
