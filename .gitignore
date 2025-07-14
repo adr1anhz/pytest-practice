@@ -1,4 +1,6 @@
 stuff/__pycache__/
 tests/__pycache__/
 tests/.pytest_cache/
+tests2/.pytest_cache/
+tests2/__pycache__/
 venv/
