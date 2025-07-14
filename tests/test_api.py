@@ -18,6 +18,4 @@ def test_duckduckgo_instant_answer_api():
     assert response.status_code in [200, 202]
     assert 'Python' in body['AbstractText']
 
-    print(body)
 
-test_duckduckgo_instant_answer_api()
