@@ -33,3 +33,16 @@ def post_url():
 def test_get_post_url(post_url):
     response = requests.get(post_url)
     assert response.status_code == 200
+
+
+
+@pytest.mark.parametrize("post_id", [1, 5, 10])
+def test_post_exists(post_id):
+    url = f"https://jsonplaceholder.typicode.com/posts/{post_id}"
+    response = requests.get(url)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["id"] == post_id
+
+
+
